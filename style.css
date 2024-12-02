@@ -1,18 +1,94 @@
-*,*::before, *::after{
+*, *::before, *::after {
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Arial, sans-serif;
 }
 
-:root{
-    --hue-neutral:200l;
-    --hue-wrong:0;
-    --hue-correct:145;
+:root {
+    --hue-neutral: 200;
+    --hue-correct: 145;
+    --hue-wrong: 0;
 }
-body{
-    --hue :var(--hue0-netural);
+
+body {
     padding: 0;
     margin: 0;
     display: flex;
-    width: 100vw;
+    justify-content: center;
+    align-items: center;
     height: 100vh;
+    background-color: hsl(var(--hue-neutral), 50%, 50%);
 }
+
+body.correct {
+    background-color: hsl(var(--hue-correct), 50%, 50%);
+}
+
+body.wrong {
+    background-color: hsl(var(--hue-wrong), 50%, 50%);
+}
+
+.container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: hsl(var(--hue-neutral), 20%, 20%);
+}
+
+.question-box {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: hsl(var(--hue-neutral), 10%, 10%);
+}
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: hsl(var(--hue-neutral), 70%, 50%);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background-color: hsl(var(--hue-correct), 70%, 40%);
+}
+
+.btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.correct {
+    background-color: hsl(var(--hue-correct), 70%, 50%);
+}
+
+.wrong {
+    background-color: hsl(var(--hue-wrong), 70%, 50%);
+}
+
+.hide {
+    display: none;
+}
+
+.controls {
+    margin-top: 20px;
+}
+
